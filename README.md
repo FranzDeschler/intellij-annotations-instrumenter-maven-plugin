@@ -57,7 +57,7 @@ Just update your `pom.xml with following:
         <plugin>
             <groupId>se.eris</groupId>
             <artifactId>notnull-instrumenter-maven-plugin</artifactId>
-            <version>1.0.0</version>
+            <version>1.1.1</version>
             <executions>
                 <execution>
                     <goals>
@@ -85,7 +85,7 @@ want to one or more other annotations add them to configuration, for example:
         <plugin>
             <groupId>se.eris</groupId>
             <artifactId>notnull-instrumenter-maven-plugin</artifactId>
-            <version>1.0.0</version>
+            <version>1.1.1</version>
             <executions>
                 <execution>
                     <id>instrument</id>
@@ -121,7 +121,7 @@ If you don't like to have `@NotNull` on 99.99% of your parameters and methods tu
         <plugin>
             <groupId>se.eris</groupId>
             <artifactId>notnull-instrumenter-maven-plugin</artifactId>
-            <version>1.0.0</version>
+            <version>1.1.1</version>
             <executions>
                 <execution>
                     <id>instrument</id>

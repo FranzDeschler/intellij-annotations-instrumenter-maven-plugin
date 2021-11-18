@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
@@ -6,7 +7,7 @@
 
     <groupId>se.eris</groupId>
     <artifactId>notnull-instrumenter-maven-plugin</artifactId>
-    <version>1.1.1-SNAPSHOT</version>
+    <version>1.1.2-SNAPSHOT</version>
     <packaging>maven-plugin</packaging>
 
     <description>NotNull annotations instrumenter maven plugin</description>
@@ -23,7 +24,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <source>8</source>
 
-        <maven-core.version>3.6.3</maven-core.version>
+        <maven-core.version>3.8.1</maven-core.version>
         <maven-plugin-annotations.version>3.6.1</maven-plugin-annotations.version>
         <intellij-annotations.version>20.1.0</intellij-annotations.version>
         <asm.version>9.2</asm.version>
@@ -48,6 +49,9 @@
         </developer>
         <developer>
             <name>Alexander Torstling</name>
+        </developer>
+        <developer>
+            <name>Johan Granlund</name>
         </developer>
         <developer>
             <name>Olof Larsson</name>
@@ -79,9 +83,13 @@
         <developerConnection>scm:git:git@github.com:osundblad/intellij-annotations-instrumenter-maven-plugin.git
         </developerConnection>
         <url>https://github.com/osundblad/intellij-annotations-instrumenter-maven-plugin</url>
-        <!--<tag>notnull-instrumenter-maven-plugin-0.5.0</tag>-->
     </scm>
 
+    <issueManagement>
+        <url>https://github.com/osundblad/intellij-annotations-instrumenter-maven-plugin/issues</url>
+        <system>GitHub Issues</system>
+    </issueManagement>
+    
     <dependencies>
         <dependency>
             <groupId>org.apache.maven</groupId>
@@ -182,8 +190,8 @@
                 </executions>
             </plugin>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.0.0-M5</version>
                 <dependencies>
                     <dependency>
                         <groupId>org.junit.jupiter</groupId>
@@ -216,7 +224,31 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>3.2.0</version>
+                    <version>3.3.1</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>3.0.0-M5</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-project-info-reports-plugin</artifactId>
+                    <version>3.1.2</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>3.9.1</version>
+                    <dependencies>
+                        <!-- https://mvnrepository.com/artifact/org.apache.maven.doxia/doxia-module-twiki -->
+                        <dependency>
+                            <groupId>org.apache.maven.doxia</groupId>
+                            <artifactId>doxia-module-twiki</artifactId>
+                            <version>1.10</version>
+                        </dependency>
+
+                    </dependencies>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -285,7 +317,18 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-project-info-reports-plugin</artifactId>
-                <version>3.1.1</version>
+                <version>3.1.2</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>dependencies</report>
+                            <report>team</report>
+                            <report>issue-management</report>
+                            <report>licenses</report>
+                            <report>scm</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
             </plugin>
         </plugins>
     </reporting>
