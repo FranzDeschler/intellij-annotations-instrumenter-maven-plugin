@@ -1,6 +1,4 @@
-# intellij-annotations-instrumenter-maven-plugin
-
-__IntelliJ IDEA annotations instrumenter maven plugin__
+# notnull-instrumenter-maven-plugin
 
 This code is based on Vlad Rassokhin's intellij-annotations-instrumenter-maven-plugin. The following
 significant additions/changes have been made:
@@ -47,7 +45,7 @@ Just update your `pom.xml with following:
     <dependency>
         <groupId>org.jetbrains</groupId>
         <artifactId>annotations</artifactId>
-        <version>15.0</version>
+        <version>20.1.0</version>
     </dependency>
     ...
 </dependencies>
